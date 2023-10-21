@@ -1,4 +1,4 @@
-package java.main;
+
 
 import java.util.Random;
 
@@ -109,5 +109,30 @@ public class IPhone implements Phone, MusicPlayer, Browser {
 
    public void refreshPage() {
       System.out.println("refreshing page...");
+   }
+
+   // Test
+   public static void main(String[] args) {
+      IPhone iPhone = new IPhone();
+
+      iPhone.call(123456789);
+
+      System.out.println("Teste de recebimento de chamada");
+      iPhone.callAccept(123456789);
+      System.out.println("Teste de chamada aceita");
+      iPhone.callAccept(123456789, true);
+      System.out.println("Teste de chamada recusada");
+      iPhone.callAccept(123456789, false);
+
+      System.out.println("Teste de navegador de internet");
+      iPhone.showPage();
+      iPhone.addNewTab();
+      iPhone.refreshPage();
+
+      System.out.println("Teste de tocador de música");
+      iPhone.playMusic();
+      iPhone.pauseMusic();
+      iPhone.nextMusicTrack();
+      iPhone.previewTrack();
    }
 }
